@@ -1,17 +1,29 @@
-import * as React from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+import * as React from 'react'
+import * as component from '../components'
+import Seo from '../components/seo'
+import GlobalStyle from '../components/common/GlobalStyle'
+import styled from '@emotion/styled'
 
-import Layout from "../components/layout"
-import Seo from "../components/seo"
-import * as styles from "../components/index.module.css"
-import GlobalStyle from "../components/common/GlobalStyle"
+const IndexPage = () => {
+  const CATEGORY_LIST = {
+    All: 5,
+    Web: 3,
+    Mobile: 2,
+  }
 
-const IndexPage = () => (
-  <div>
-    <GlobalStyle />
-  </div>
-)
+  return (
+    <Wrap>
+      <GlobalStyle />
+      <component.Header />
+      <component.CategoryList
+        selectedCategory="Web"
+        categoryList={CATEGORY_LIST}
+      />
+      <component.PostList />
+      <component.Footer />
+    </Wrap>
+  )
+}
 
 /**
  * Head export to define metadata for the page
@@ -21,3 +33,8 @@ const IndexPage = () => (
 export const Head = () => <Seo title="Home" />
 
 export default IndexPage
+
+const Wrap = styled.div`
+  display: flex;
+  flex-direction: column;
+`

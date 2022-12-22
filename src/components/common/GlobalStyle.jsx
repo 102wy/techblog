@@ -23,6 +23,9 @@ const defaultStyle = css`
         text-decoration: none;
         cursor: pointer;
     }
+    hgroup, img, figure, fieldset, ul, ol, dl, dd, p  {
+        margin-bottom: 0!important;
+    }
 `
 
 const GlobalStyle = () => {
