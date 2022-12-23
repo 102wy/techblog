@@ -85,8 +85,3 @@ export const getPostList = graphql`
     }
   }
 `;
-
-const Wrap = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
